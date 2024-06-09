@@ -14,8 +14,8 @@ function NewNote(){
             };
         });
     }
-    function add(event){
-
+    function add(props){
+        props.onadd(addNote);
         setAddNote({
             title:"",
             content:""
@@ -28,11 +28,13 @@ function NewNote(){
                 <input 
                 name ="title"
                  placeholder="title" 
-                 onChange={handelChange}  
+                 onChange={handelChange} 
+                 value={addNote.title} 
                 />
                 <textarea 
                 name="content" 
                 placeholder="Takenote"
+                value={addNote.content}
                 />
                 <button onClick={add}>Add</button>
                     
