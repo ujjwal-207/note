@@ -1,10 +1,18 @@
 import React from "react";
 
-function Note(){
+
+
+function Note(props){
+    function handeldelete(){
+        props.ondelete(props.id);
+        
+    }
+
     return(
         <div>
-        <h1>this is heading</h1>
-        <p>this is content</p>
+        <h1>{props.title}</h1>
+        <p>{props.content}</p>
+        <button onClick={handeldelete}>Delete</button>
         </div>
         
     );

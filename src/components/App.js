@@ -13,6 +13,15 @@ function App() {
         return[...prevNotes , addNote];
       });
     }
+    function deleting(id){
+      setNewNote(prevNotes => {
+        return prevNotes.filter((noteItem ,index) => {
+          return index!==id;
+        })
+      })
+
+
+    }
   
 
 
@@ -27,9 +36,10 @@ function App() {
         <Note 
           key={index}
           id={index}
-          tile={noteItem.tile}
+          title={noteItem.title}
           content={noteItem.content}
-          
+          ondelete={deleting}
+
         />
       )
      })}

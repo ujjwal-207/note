@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function NewNote(){
+function NewNote(props){
     const[addNote, setAddNote] =useState({
         title:"",
         content:"",
@@ -14,12 +14,13 @@ function NewNote(){
             };
         });
     }
-    function add(props){
+    function add(event){
         props.onadd(addNote);
         setAddNote({
             title:"",
             content:""
-        })
+        });
+        event.preventDefault();
     }
 
     return(
@@ -35,6 +36,7 @@ function NewNote(){
                 name="content" 
                 placeholder="Takenote"
                 value={addNote.content}
+                onChange={handelChange}
                 />
                 <button onClick={add}>Add</button>
                     
