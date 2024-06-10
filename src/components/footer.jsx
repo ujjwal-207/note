@@ -4,9 +4,9 @@ function Footer(){
  const getYear = new Date().getFullYear();
 
  return(
-    <fotter>
+    <footer>
         <p>CopyRightⓒ {getYear}</p>
-    </fotter>
+    </footer>
  );
 }
 export default Footer;
